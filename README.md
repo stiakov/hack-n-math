@@ -26,7 +26,7 @@ Click here [Pending](#)
 
 ### Setup Dependencies 🏗
 
-- On the home directory run one of these: 
+- On the home directory run one of these:
 
 - `npm install` to use Node Package Manager or
 
@@ -55,10 +55,10 @@ Click here [Pending](#)
 
 **Santiago Torres G.**
 
-* [Email](stiakov@pm.me)
-* [GitHub](https://github.com/stiakov)
-* [LinkedIn](https://www.linkedin.com/in/stiakov/)
-* [Twitter](https://twitter.com/st_iakov)
+- [Email](stiakov@pm.me)
+- [GitHub](https://github.com/stiakov)
+- [LinkedIn](https://www.linkedin.com/in/stiakov/)
+- [Twitter](https://twitter.com/st_iakov)
 
 ## 🤝 Contributing
 
