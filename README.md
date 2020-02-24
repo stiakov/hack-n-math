@@ -6,16 +6,17 @@
 
 This repo is intended to host my portfolio. It's bootstraped with [Gatsby](https://www.gatsbyjs.org/) and created from zero to deploy.
 
-## Built With 🧩
+### Built With 🧩
 
 - JavaScript / HTML / CSS
-- React / Gatsby / GraphQL
+- ReactJS / GatsbyJS / GraphQL
 
-## Lovely Demo 👁
+### Live Preview 👁
 
-[Pending](#)
+Click here [Pending](#)
 
 ---
+
 ## Development
 
 ### Pre-requisites ⚙️
