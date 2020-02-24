@@ -1,5 +1,5 @@
 {
-  "name": "Santiago Torres Portfolio",
+  "name": "hack-n-math-santiago-torres-portfolio",
   "private": true,
   "description": "Full-Stack Software Developer",
   "version": "0.1.0",
@@ -14,11 +14,15 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@emotion/styled": "^10.0.27",
     "gatsby": "^2.19.7",
+    "gatsby-cli": "^2.9.0",
+    "gatsby-plugin-emotion": "^4.1.22",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.4",
     "prettier": "^1.19.1"
   },
   "repository": {
