@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import Layout from './components/Layout';
+import Layout from '../components/Layout';
 
 const nameStyle = css`
   text-decoration: none;
