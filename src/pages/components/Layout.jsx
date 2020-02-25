@@ -1,12 +1,18 @@
-import React from "react"
-import { Global, css } from "@emotion/core"
+import React from 'react';
+import { Global, css } from '@emotion/core';
+import NavLinks from './NavLinks';
+import {
+  light,
+  lightMedium,
+  dark,
+} from './colors';
 
 const Layout = ({ children }) => {
   return (
     <>
       <Global
         styles={css`
-          @import url('https://fonts.googleapis.com/css?family=Cabin|Source+Sans+Pro&display=swap');
+          @import url("https://fonts.googleapis.com/css?family=Cabin|Odibee+Sans|Source+Sans+Pro&display=swap");
 
           * {
             box-sizing: border-box;
@@ -20,11 +26,14 @@ const Layout = ({ children }) => {
           html,
           body {
             margin: 0;
-            color: #555;
+            background-color: ${dark};
+            color: ${lightMedium};
             font-family: "Source Sans Pro";
             font-size: 18px;
-            line-height: 1.4
-              /* Remove margin from main div that gastby mount into */
+            line-height: 1.4;
+            text-rendering: optimizeLegibility !important;
+            -webkit-font-smoothing: antialiased !important;
+            /* Remove margin from main div that gastby mount into */
             > div {
               margin-top: 0;
             }
@@ -36,8 +45,8 @@ const Layout = ({ children }) => {
           h4,
           h5,
           h6 {
-            color: #222;
-            font-family: "Cabin";
+            color: ${light};
+            font-family: 'Cabin';
             line-height: 1.1;
 
             + * {
@@ -45,7 +54,7 @@ const Layout = ({ children }) => {
             }
 
             strong {
-              color: #222;
+              color: ${light};
             }
 
             li {
@@ -54,8 +63,8 @@ const Layout = ({ children }) => {
           }
         `}
       />
-      <header></header>
       <main>{children}</main>
+      <NavLinks />
     </>
   )
 }
