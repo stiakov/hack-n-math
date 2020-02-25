@@ -6,16 +6,17 @@
 
 This repo is intended to host my portfolio. It's bootstraped with [Gatsby](https://www.gatsbyjs.org/) and created from zero to deploy.
 
-## Built With 🧩
+### Built With 🧩
 
 - JavaScript / HTML / CSS
-- React / Gatsby / GraphQL
+- ReactJS / GatsbyJS / GraphQL
 
-## Lovely Demo 👁
+### Live Preview 👁
 
-[Pending](#)
+Click here [Pending](#)
 
 ---
+
 ## Development
 
 ### Pre-requisites ⚙️
@@ -25,7 +26,7 @@ This repo is intended to host my portfolio. It's bootstraped with [Gatsby](https
 
 ### Setup Dependencies 🏗
 
-- On the home directory run one of these: 
+- On the home directory run one of these:
 
 - `npm install` to use Node Package Manager or
 
@@ -54,10 +55,10 @@ This repo is intended to host my portfolio. It's bootstraped with [Gatsby](https
 
 **Santiago Torres G.**
 
-* [Email](stiakov@pm.me)
-* [GitHub](https://github.com/stiakov)
-* [LinkedIn](https://www.linkedin.com/in/stiakov/)
-* [Twitter](https://twitter.com/st_iakov)
+- [Email](stiakov@pm.me)
+- [GitHub](https://github.com/stiakov)
+- [LinkedIn](https://www.linkedin.com/in/stiakov/)
+- [Twitter](https://twitter.com/st_iakov)
 
 ## 🤝 Contributing
 
