@@ -62,23 +62,27 @@ const HorizontalLine = () => (
 
 const LinkItem = ({ path, number, text }) => (
   <Link css={linkStyle} to={`${path}`} activeClassName="current-page">
-    <small css={numLinkStyle}>{number} </small>
+    <small css={numLinkStyle}>
+      {number}
+    </small>
     <HorizontalLine />
     {text}
   </Link>
 );
 
-const NavLinks = () => {
-  return (
-    <nav css={wrapper}>
-      <LinkItem path="/" number="00" text="HOME" />
-      <LinkItem path="projects" number="01" text="PROJECTS" />
-      <LinkItem path="blog" number="02" text="BLOG" />
-      <LinkItem path="contact" number="03" text="CONTACT" />
-    </nav>
-  )
-}
+const NavLinks = () => (
+  <nav css={wrapper}>
+    <LinkItem path="/" number="00" text="HOME" />
+    <LinkItem path="projects" number="01" text="PROJECTS" />
+    <LinkItem path="blog" number="02" text="BLOG" />
+    <LinkItem path="contact" number="03" text="CONTACT" />
+  </nav>
+);
 
-NavLinks.propTypes = {}
+LinkItem.propTypes = {
+  path: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
 
 export default NavLinks;

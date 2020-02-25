@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Global, css } from '@emotion/core';
 import NavLinks from './NavLinks';
 import {
@@ -7,11 +8,10 @@ import {
   dark,
 } from './colors';
 
-const Layout = ({ children }) => {
-  return (
-    <>
-      <Global
-        styles={css`
+const Layout = ({ children }) => (
+  <>
+    <Global
+      styles={css`
           @import url("https://fonts.googleapis.com/css?family=Cabin|Odibee+Sans|Source+Sans+Pro&display=swap");
 
           * {
@@ -62,10 +62,14 @@ const Layout = ({ children }) => {
             }
           }
         `}
-      />
-      <main>{children}</main>
-      <NavLinks />
-    </>
-  )
-}
-export default Layout
+    />
+    <main>{children}</main>
+    <NavLinks />
+  </>
+);
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Layout;
