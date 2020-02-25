@@ -2,21 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Global, css } from '@emotion/core';
 import Helmet from 'react-helmet';
-import NavLinks from './NavLinks';
+import Header from './Header';
 import useSiteMetadata from '../hooks/use-sitemetadata';
 import {
   light,
   lightMedium,
   dark,
-} from './colors';
+} from '../assets/colors';
+import mediaQuery from '../assets/mediaQueries';
 
-const Layout = ({ children }) => {
+const Layout = ({ dataHeader, dataMain }) => {
   const { title, description } = useSiteMetadata();
   return (
     <>
       <Global
         styles={css`
             @import url("https://fonts.googleapis.com/css?family=Cabin|Odibee+Sans|Source+Sans+Pro&display=swap");
+            ${mediaQuery.desktop()}
+            ${mediaQuery.mobile()}
 
             * {
               box-sizing: border-box;
@@ -29,10 +32,11 @@ const Layout = ({ children }) => {
 
             html,
             body {
+              display: flex;
               margin: 0;
               background-color: ${dark};
               color: ${lightMedium};
-              font-family: "Source Sans Pro";
+              font-family: 'Source Sans Pro', 'Andale Mono', 'monospace';
               font-size: 18px;
               line-height: 1.4;
               text-rendering: optimizeLegibility !important;
@@ -50,7 +54,7 @@ const Layout = ({ children }) => {
             h5,
             h6 {
               color: ${light};
-              font-family: 'Cabin';
+              font-family: 'Cabin', 'Helvetica', 'sans-serif';
               line-height: 1.1;
 
               + * {
@@ -65,21 +69,35 @@ const Layout = ({ children }) => {
                 margin-top: 0.25rem;
               }
             }
+            .content {
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: space-around
+            }
+            .navigator {
+              max-width: 39vw;
+            }
+            .main-container {
+              max-width: 59vw;
+            }
           `}
       />
       <Helmet>
         <html lang="en" />
-          <title>{title}</title>
+        <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
-      <main>{children}</main>
-      <NavLinks />
+      <div className="content">
+        <Header className="navigator" data={dataHeader} />
+        <main className="main-container">{dataMain}</main>
+      </div>
     </>
   );
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  dataHeader: PropTypes.object.isRequired,
+  dataMain: PropTypes.node.isRequired,
 };
 
 export default Layout;

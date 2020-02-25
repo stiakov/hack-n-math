@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { css } from '@emotion/core';
-import { light, lightMedium } from './colors';
+import { light, lightMedium } from '../assets/colors';
 
 const wrapper = css`
   display: flex;
@@ -21,7 +21,7 @@ const numLinkStyle = css`
 `;
 
 const linkStyle = css`
-  font-family: "Odibee Sans";
+  font-family: 'Odibee Sans', 'Andale Mono', 'monospace';
   font-size: 0.8rem;
   text-decoration: none;
   color: ${lightMedium};
@@ -61,7 +61,7 @@ const HorizontalLine = () => (
 );
 
 const LinkItem = ({ path, number, text }) => (
-  <Link css={linkStyle} to={`${path}`} activeClassName="current-page">
+  <Link css={linkStyle} to={`/${path}`} activeClassName="current-page">
     <small css={numLinkStyle}>
       {number}
     </small>
@@ -72,10 +72,10 @@ const LinkItem = ({ path, number, text }) => (
 
 const NavLinks = () => (
   <nav css={wrapper}>
-    <LinkItem path="/" number="00" text="HOME" />
-    <LinkItem path="projects" number="01" text="PROJECTS" />
-    <LinkItem path="blog" number="02" text="BLOG" />
-    <LinkItem path="contact" number="03" text="CONTACT" />
+    <LinkItem path="who" number="00" text="WHO" />
+    <LinkItem path="" number="01" text="PORTFOLIO" />
+    <LinkItem path="contact" number="02" text="CONTACT" />
+    <LinkItem path="blog" number="03" text="BLOG" />
   </nav>
 );
 
