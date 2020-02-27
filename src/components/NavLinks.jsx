@@ -71,7 +71,7 @@ const LinkItem = ({ path, number, text }) => (
 );
 
 const NavLinks = () => (
-  <nav css={wrapper}>
+  <nav css={wrapper} id="desktop-nav">
     <LinkItem path="who" number="00" text="WHO" />
     <LinkItem path="" number="01" text="PORTFOLIO" />
     <LinkItem path="contact" number="02" text="CONTACT" />
