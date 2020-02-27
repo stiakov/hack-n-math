@@ -16,20 +16,18 @@ const descriptionStyle = css`
   font-family: 'Cabin', 'Helvetica', 'sans-serif';
 `;
 
-const Header = ({ data }) => {
-  return (
-    <div className="navigator">
-      <h1 css={nameStyle}>{data.title}</h1>
-      <h3 css={descriptionStyle}>
-        {data.description}
-      </h3>
-      <NavLinks />
-    </div>
-  );
-};
+const Header = ({ data }) => (
+  <div className="navigator">
+    <h1 css={nameStyle}>{data.title}</h1>
+    <h3 css={descriptionStyle}>
+      {data.description}
+    </h3>
+    <NavLinks />
+  </div>
+);
 
 Header.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.node.isRequired,
 };
 
 export default Header;

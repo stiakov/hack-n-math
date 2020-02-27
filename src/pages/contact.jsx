@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 
 const title = 'Contact';
@@ -9,14 +8,8 @@ const ContactIndex = () => (
   <h1>Send me a message</h1>
 );
 
-const Contact = () => {
-  return (
-    <Layout dataHeader={{ title, description }} dataMain={<ContactIndex />} />
-  );
-};
-
-Contact.propTypes = {
-
-};
+const Contact = () => (
+  <Layout dataHeader={{ title, description }} dataMain={<ContactIndex />} />
+);
 
 export default Contact;

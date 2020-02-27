@@ -98,7 +98,7 @@ const Layout = ({ dataHeader, dataMain }) => {
 };
 
 Layout.propTypes = {
-  dataHeader: PropTypes.object.isRequired,
+  dataHeader: PropTypes.node.isRequired,
   dataMain: PropTypes.node.isRequired,
 };
 

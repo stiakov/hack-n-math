@@ -8,10 +8,8 @@ const BlogIndex = () => (
   <h1>From Blog Index</h1>
 );
 
-const Blog = () => {
-  return (
-    <Layout dataHeader={{ title, description }} dataMain={<BlogIndex />} />
-  );
-};
+const Blog = () => (
+  <Layout dataHeader={{ title, description }} dataMain={<BlogIndex />} />
+);
 
 export default Blog;

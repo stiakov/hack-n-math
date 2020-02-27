@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 
 const title = 'The Builder';
@@ -9,14 +8,8 @@ const WhoIndex = () => (
   <h1>SANTIAGO TORRES GUEVARA</h1>
 );
 
-const Who = () => {
-  return (
-    <Layout dataHeader={{ title, description }} dataMain={<WhoIndex />} />
-  );
-};
-
-Who.propTypes = {
-
-};
+const Who = () => (
+  <Layout dataHeader={{ title, description }} dataMain={<WhoIndex />} />
+);
 
 export default Who;
