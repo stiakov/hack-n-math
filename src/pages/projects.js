@@ -8,7 +8,9 @@ const ProjectsIndex = () => (
   <h1>From Projects</h1>
 );
 const Projects = () => (
-  <Layout dataHeader={{ title, description }} dataMain={<ProjectsIndex />} />
+  <Layout dataHeader={{ title, description }}>
+    <ProjectsIndex />
+  </Layout>
 );
 
 export default Projects;

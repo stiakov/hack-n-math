@@ -9,7 +9,9 @@ const BlogIndex = () => (
 );
 
 const Blog = () => (
-  <Layout dataHeader={{ title, description }} dataMain={<BlogIndex />} />
+  <Layout >
+    <BlogIndex />
+  </Layout>
 );
 
 export default Blog;

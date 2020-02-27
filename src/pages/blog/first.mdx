@@ -1,4 +1,52 @@
+---
+title: Hello!
+slug: hello-world
+author: Santiago Torres G
+---
+
+
 # How I Made a Horizontal Carousel for My Responsive WebApp
+
+Code block with code highlighting:
+
+```js:title=src/components/post.jsx {5-7,10}
+import React from "react";
+
+const Post = ({ data: { post } }) => (
+  <Layout>
+    <Heading variant="h2" as="h2">
+      {post.title}
+    </Heading>
+    <p
+      sx={{
+        color: `secondary`,
+        mt: 3,
+        a: { color: `secondary` },
+        fontSize: [1, 1, 2]
+      }}
+    >
+      <span>{post.date}</span>
+      {post.tags && (
+        <React.Fragment>
+          {` — `}
+          <ItemTags tags={post.tags} />
+        </React.Fragment>
+      )}
+    </p>
+    <section
+      sx={{
+        ...CodeStyles,
+        my: 5,
+        ".gatsby-resp-image-wrapper": { my: 5, boxShadow: `lg` }
+      }}
+    >
+      <MDXRenderer>{post.body}</MDXRenderer>
+    </section>
+  </Layout>
+);
+
+export default Post;
+```
 
 ![Apple Watch Pattern Library by Hanna Jung](https://miro.medium.com/max/480/1*UBAFXNsFeWLzbMt8Iky-Eg.gif)
 
@@ -50,7 +98,7 @@ _git checkout 4d07f7c52eee4ce4e2596254f3b4af0adbc394d7_
 
 Let’s add dimensions and borders to make it visible and flexbox to make it horizontal, do not forget to link your CSS file with the HTML.
 
-```
+```js {2,4-5}
 /* index.html */
 
 <head>

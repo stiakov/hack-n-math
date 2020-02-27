@@ -9,7 +9,9 @@ const ContactIndex = () => (
 );
 
 const Contact = () => (
-  <Layout dataHeader={{ title, description }} dataMain={<ContactIndex />} />
+  <Layout dataHeader={{ title, description }}>
+    <ContactIndex />
+  </Layout>
 );
 
 export default Contact;

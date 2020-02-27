@@ -12,7 +12,9 @@ import {
 import mediaQuery from '../assets/mediaQueries';
 import MobileNav from './MobileNav';
 
-const Layout = ({ dataHeader, dataMain }) => {
+
+const Layout = ({ dataHeader, children }) => {
+
   const { title, description } = useSiteMetadata();
   return (
     <>
@@ -81,6 +83,87 @@ const Layout = ({ dataHeader, dataMain }) => {
             .main-container {
               max-width: 59vw;
             }
+
+            .gatsby-highlight {
+              background-color: #1d1f21;
+              border-radius: 0.3em;
+              margin: 0.5em 0;
+              padding: 1em;
+              overflow: auto;
+            }
+
+            .gatsby-highlight pre[class*="language-"].line-numbers {
+              padding: 0;
+              padding-left: 2.8em;
+              overflow: initial;
+            }
+
+            .gatsby-highlight {
+              background-color: #fdf6e3;
+              border-radius: 0.3em;
+              margin: 0.5em 0;
+              padding: 1em;
+              overflow: auto;
+            }
+            
+            .gatsby-highlight pre[class*="language-"] {
+              background-color: transparent;
+              margin: 0;
+              padding: 0;
+              overflow: initial;
+              float: left; /* 1 */
+              min-width: 100%; /* 2 */
+            }
+            .gatsby-highlight-code-line {
+              background-color: #feb;
+              display: block;
+              margin-right: -1em;
+              margin-left: -1em;
+              padding-right: 1em;
+              padding-left: 0.75em;
+              border-left: 0.25em solid #f99;
+            }
+            .gatsby-highlight pre[class*="language-"].line-numbers {
+              padding-left: 2.8em;
+            }
+
+            /**
+            * If you only want to use line numbering
+            */
+
+            .gatsby-highlight {
+              background-color: #fdf6e3;
+              border-radius: 0.3em;
+              margin: 0.5em 0;
+              padding: 1em;
+              overflow: auto;
+            }
+
+            .gatsby-highlight pre[class*="language-"].line-numbers {
+              padding: 0;
+              padding-left: 2.8em;
+              overflow: initial;
+            }
+            .command-line-prompt > span:before {
+              color: #999;
+              content: " ";
+              display: block;
+              padding-right: 0.8em;
+            }
+
+            /* Prompt for all users */
+            .command-line-prompt > span[data-user]:before {
+              content: "[" attr(data-user) "@" attr(data-host) "] $";
+            }
+
+            /* Prompt for root */
+            .command-line-prompt > span[data-user="root"]:before {
+              content: "[" attr(data-user) "@" attr(data-host) "] #";
+            }
+
+            .command-line-prompt > span[data-prompt]:before {
+              content: attr(data-prompt);
+            }
           `}
       />
       <Helmet>
@@ -91,15 +174,23 @@ const Layout = ({ dataHeader, dataMain }) => {
       <MobileNav />
       <div className="content">
         <Header className="navigator" data={dataHeader} />
-        <main className="main-container">{dataMain}</main>
+        <main className="main-container">{children}</main>
       </div>
     </>
   );
 };
 
 Layout.propTypes = {
-  dataHeader: PropTypes.node.isRequired,
-  dataMain: PropTypes.node.isRequired,
+  dataHeader: PropTypes.node,
+  children: PropTypes.node.isRequired,
+};
+
+Layout.defaultProps = {
+  dataHeader: {
+    title: 'title default',
+    description: 'Description default.',
+    extra: 'extra default.',
+  },
 };
 
 export default Layout;

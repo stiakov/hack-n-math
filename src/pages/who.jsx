@@ -9,7 +9,9 @@ const WhoIndex = () => (
 );
 
 const Who = () => (
-  <Layout dataHeader={{ title, description }} dataMain={<WhoIndex />} />
+  <Layout dataHeader={{ title, description }}>
+    <WhoIndex />
+  </Layout>
 );
 
 export default Who;
