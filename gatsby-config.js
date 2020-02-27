@@ -14,5 +14,24 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              aliases: {
+                sh: 'bash',
+                js: 'javascript',
+                css: 'css',
+                html: 'html',
+              },
+              showLineNumbers: true,
+            },
+          },
+        ],
+      },
+    },
   ],
 };
