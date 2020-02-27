@@ -10,6 +10,7 @@ import {
   dark,
 } from '../assets/colors';
 import mediaQuery from '../assets/mediaQueries';
+import MobileNav from './MobileNav';
 
 const Layout = ({ dataHeader, dataMain }) => {
   const { title, description } = useSiteMetadata();
@@ -87,6 +88,7 @@ const Layout = ({ dataHeader, dataMain }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
+      <MobileNav />
       <div className="content">
         <Header className="navigator" data={dataHeader} />
         <main className="main-container">{dataMain}</main>
