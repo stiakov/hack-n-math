@@ -3,52 +3,7 @@ title: Hello!
 slug: hello-world
 author: Santiago Torres G
 ---
-
-
 # How I Made a Horizontal Carousel for My Responsive WebApp
-
-Code block with code highlighting:
-
-```js:title=src/components/post.jsx {5-7,10}
-import React from "react";
-
-const Post = ({ data: { post } }) => (
-  <Layout>
-    <Heading variant="h2" as="h2">
-      {post.title}
-    </Heading>
-    <p
-      sx={{
-        color: `secondary`,
-        mt: 3,
-        a: { color: `secondary` },
-        fontSize: [1, 1, 2]
-      }}
-    >
-      <span>{post.date}</span>
-      {post.tags && (
-        <React.Fragment>
-          {` — `}
-          <ItemTags tags={post.tags} />
-        </React.Fragment>
-      )}
-    </p>
-    <section
-      sx={{
-        ...CodeStyles,
-        my: 5,
-        ".gatsby-resp-image-wrapper": { my: 5, boxShadow: `lg` }
-      }}
-    >
-      <MDXRenderer>{post.body}</MDXRenderer>
-    </section>
-  </Layout>
-);
-
-export default Post;
-```
-
-![Apple Watch Pattern Library by Hanna Jung](https://miro.medium.com/max/480/1*UBAFXNsFeWLzbMt8Iky-Eg.gif)
 
 Making the web accessible is a crucial feature to let the users experience it with satisfaction. The same precept applies when we display the information in our web app.
 
@@ -65,13 +20,13 @@ Find this tutorial in [GitHub](https://github.com/stiakov/carousel) and explore 
 
 `git checkout <hash_number>`
 
-
+---
 ## Laying out our carousel
 _git checkout 9a5b614d39b3293132bca16e74d1a65cdb881f42_
 
 Let’s add the basic components: One container and some divisions within.
 
-```
+```html
 /* index.html */
 
 <body>
@@ -98,7 +53,7 @@ _git checkout 4d07f7c52eee4ce4e2596254f3b4af0adbc394d7_
 
 Let’s add dimensions and borders to make it visible and flexbox to make it horizontal, do not forget to link your CSS file with the HTML.
 
-```js {2,4-5}
+```html
 /* index.html */
 
 <head>
@@ -110,7 +65,7 @@ Let’s add dimensions and borders to make it visible and flexbox to make it hor
 </body>
 ```
 
-```
+```css
 /* styles.css */
 
 #carousel {
@@ -141,7 +96,7 @@ _git checkout bc22519554bafab063bfc0b595cfb8fc62eabde2_
 
 Here is when the magic occurs, add and set the property overflow-x to auto and it will wrap all the divisions inside the container:
 
-```
+```css
 /* styles.css */
 
 #carousel {
@@ -151,14 +106,12 @@ Here is when the magic occurs, add and set the property overflow-x to auto and i
 }
 ```
 
----
-
 ## Removing the scrollbar
 _git checkout 99f877d20a58d8697e1cc7630de24abab63d40c5_
 
 To hide the scrollbar we need to handle rules for the most popular [browser engines](https://en.wikipedia.org/wiki/Comparison_of_browser_engines).
 
-```
+```css
 /* styles.css */
 
 #carousel {
@@ -178,17 +131,15 @@ _git checkout fdf7567a578d6bf7a684919c591a1fbf48ad2eb7_
 
 Finally, let’s replace some and add an extra style to enhance the beauty of our carousel.
 
-```
+```css
 /* styles.css */
 
 #carousel {
   /* ... */
-  
   border: solid #F3E6FF .5px;
 }
 .item {
   /* ... */
-  
   background-color: #FFF9EF;
   border-radius: 7px;
 }
@@ -199,7 +150,7 @@ Finally, let’s replace some and add an extra style to enhance the beauty of ou
 
 There you are, those are the completed code blocks.
 
-```
+```html
 /* index.html */
 
 <!DOCTYPE html>
@@ -229,7 +180,7 @@ There you are, those are the completed code blocks.
 </html>
 ```
 
-```
+```css
 /* styles.css */
 
 #carousel {
@@ -237,11 +188,9 @@ There you are, those are the completed code blocks.
   overflow-x: auto;
   -ms-overflow-style: none; /* Hide the scrollbar for MS Edge */
   scrollbar-width: none; /* Hide the scrollbar for Mozilla Firefox */
-
   margin: 0 auto 0 auto;
   width: 90vw;
   height: fit-content;
-  
   border: solid #F3E6FF .5px;
 }
 
@@ -254,7 +203,6 @@ There you are, those are the completed code blocks.
   min-width: 300px;
   min-height: 20vh;
   margin: 15px;
-
   font-size: 5em;
   text-align: center;
   line-height: 300px;

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Global, css } from '@emotion/core';
+import Prism from 'prismjs';
 import Helmet from 'react-helmet';
 import Header from './Header';
 import useSiteMetadata from '../hooks/use-sitemetadata';
@@ -12,8 +13,8 @@ import {
 import mediaQuery from '../assets/mediaQueries';
 import MobileNav from './MobileNav';
 
-
 const Layout = ({ dataHeader, children }) => {
+  useEffect(() => Prism.highlightAll());
 
   const { title, description } = useSiteMetadata();
   return (
@@ -44,7 +45,6 @@ const Layout = ({ dataHeader, children }) => {
               line-height: 1.4;
               text-rendering: optimizeLegibility !important;
               -webkit-font-smoothing: antialiased !important;
-              /* Remove margin from main div that gastby mount into */
               > div {
                 margin-top: 0;
               }
@@ -82,87 +82,6 @@ const Layout = ({ dataHeader, children }) => {
             }
             .main-container {
               max-width: 59vw;
-            }
-
-            .gatsby-highlight {
-              background-color: #1d1f21;
-              border-radius: 0.3em;
-              margin: 0.5em 0;
-              padding: 1em;
-              overflow: auto;
-            }
-
-            .gatsby-highlight pre[class*="language-"].line-numbers {
-              padding: 0;
-              padding-left: 2.8em;
-              overflow: initial;
-            }
-
-            .gatsby-highlight {
-              background-color: #fdf6e3;
-              border-radius: 0.3em;
-              margin: 0.5em 0;
-              padding: 1em;
-              overflow: auto;
-            }
-            
-            .gatsby-highlight pre[class*="language-"] {
-              background-color: transparent;
-              margin: 0;
-              padding: 0;
-              overflow: initial;
-              float: left; /* 1 */
-              min-width: 100%; /* 2 */
-            }
-            .gatsby-highlight-code-line {
-              background-color: #feb;
-              display: block;
-              margin-right: -1em;
-              margin-left: -1em;
-              padding-right: 1em;
-              padding-left: 0.75em;
-              border-left: 0.25em solid #f99;
-            }
-            .gatsby-highlight pre[class*="language-"].line-numbers {
-              padding-left: 2.8em;
-            }
-
-            /**
-            * If you only want to use line numbering
-            */
-
-            .gatsby-highlight {
-              background-color: #fdf6e3;
-              border-radius: 0.3em;
-              margin: 0.5em 0;
-              padding: 1em;
-              overflow: auto;
-            }
-
-            .gatsby-highlight pre[class*="language-"].line-numbers {
-              padding: 0;
-              padding-left: 2.8em;
-              overflow: initial;
-            }
-            .command-line-prompt > span:before {
-              color: #999;
-              content: " ";
-              display: block;
-              padding-right: 0.8em;
-            }
-
-            /* Prompt for all users */
-            .command-line-prompt > span[data-user]:before {
-              content: "[" attr(data-user) "@" attr(data-host) "] $";
-            }
-
-            /* Prompt for root */
-            .command-line-prompt > span[data-user="root"]:before {
-              content: "[" attr(data-user) "@" attr(data-host) "] #";
-            }
-
-            .command-line-prompt > span[data-prompt]:before {
-              content: attr(data-prompt);
             }
           `}
       />
